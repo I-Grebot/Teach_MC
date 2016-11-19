@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>webSockets and Socket.IO</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/angular/angular.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+    <script type="text/javascript" src="/socket.js"></script> 
+    <link rel="stylesheet" href="/socket.css" />
+  </head>
+  <body ng-app="TeachMcApp" ng-controller="TeachMcController">
+
+    <form>
+
+      <input type="text" id="message" ng-model='message' />
+      <input id="submit" type="button" value="Send data to Server" ng-click='sendMessage()'>
+      <div id="content" ng-model='responses'>
+        <div ng-repeat='response in responses'>
+          {{response.data}}
+        </div>
+      </div>
+
+    </form>
+
+    <div id="block-diagram">
+      <div id="sum_left" class="shadowed">
+        <div class="centered">
+          &Sigma;
+        </div>
+      </div>
+      <div id="sum_right" class="shadowed">
+        <div class="centered">
+          &Sigma;
+        </div>
+      </div>
+      <div id="block_p" class="shadowed">
+        <div class="block_label">P</div>
+        <input type="number" class="block_value" ng-model='pid.p' />
+      </div>
+      <div id="block_i" class="shadowed">
+        <div class="block_label">I</div>
+        <input type="number" class="block_value" ng-model='pid.i' />
+      </div>
+      <div id="block_d" class="shadowed">
+        <div class="block_label">D</div>
+        <input type="number" class="block_value" ng-model='pid.d' />
+      </div>
+      <div id="arrows">
+        <div class="arrow arrow01">
+          <!-- <div class="line"></div>
+          <div class="arrow-end"></div> -->
+          <svg id="svg-arrow01" width="30" height="20">
+            <path d="M 0,0 L 30,10 L 0,20 C 0,20 10,10 0,0 z"></path>
+          </svg>
+        </div>
+        <div class="arrow arrow02">
+          <div class="arrow-end"></div>
+        </div>
+        <div class="arrow arrow03">
+          <div class="arrow-end"></div>
+        </div>
+      </div>
+      <div id="formulas"></div>
+    </div>
+    <embed class="emb" src="/PID.svg" width="920" height="383" type="image/svg+xml" viewBox="0 0 920 383.36606" preserveAspectRatio="xMaxYMax meet"> 
+  </body>
+</html>

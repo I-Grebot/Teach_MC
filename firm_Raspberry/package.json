@@ -1,0 +1,17 @@
+{
+  "name": "teach-mc-rpi",
+  "version": "1.0.0",
+  "description": "HMI and I2C communication between RPI and Teach_MC_interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "express": "^4.14.0",
+    "pi-spi": "^1.0.1",
+    "socket.io": "^1.5.1"
+  }
+}
